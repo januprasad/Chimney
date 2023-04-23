@@ -50,15 +50,15 @@ dependencies {
     implementation 'androidx.compose.material3:material3'
 }
 
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = 'com.github.chimney'
-            artifactId = 'chimney-compose'
-            version = '1.0'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
 
-            afterEvaluate {
-                from(components["release"])
+                groupId = 'com.github.chimney'
+                artifactId = 'chimney-compose'
+                version = '1.0'
             }
         }
     }
