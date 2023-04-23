@@ -1,7 +1,7 @@
 plugins {
-    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
+    id 'com.android.library'
 }
 
 android {
@@ -56,9 +56,9 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
 
-                groupId = 'com.github.chimney'
+                groupId = 'com.github.januprasad'
                 artifactId = 'chimney'
-                version = '1.0'
+                version = 'beta-1.0'
             }
         }
     }
