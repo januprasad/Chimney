@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Chimney"
-include ':app'
+//include ':app'
 include ':chimney'
