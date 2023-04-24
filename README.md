@@ -73,3 +73,19 @@ Available features in beta-1.0.1 :
                 ),
             )
 ```
+
+## Installation
+- Add jitpack.io to your project
+```
+repositories {
+    ...
+    maven { url "https://jitpack.io" }
+}
+```
+- Add Chimney library dependency
+``` 
+dependencies { 
+  ...
+  implementation 'com.github.januprasad:Chimney:beta-1.0.1'
+}
+```
