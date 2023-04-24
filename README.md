@@ -2,6 +2,9 @@
 [![](https://jitpack.io/v/januprasad/Chimney.svg)](https://jitpack.io/#januprasad/Chimney)
 
 # How can we convert SVG to shape in compose
+
+![screen](https://user-images.githubusercontent.com/1284454/233897178-3365773f-3d62-4656-953f-76f1654e26b3.png)
+
 Here I'm taking a custom shape in SVG, which is flat (single-level path)
 ```svg
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
@@ -25,8 +28,7 @@ Here I'm taking a custom shape in SVG, which is flat (single-level path)
   </path>
 </vector>
 ```
-
-![screen](https://user-images.githubusercontent.com/1284454/233897178-3365773f-3d62-4656-953f-76f1654e26b3.png)
+[Screenshot 2023-04-24 at 8 44 36 AM](https://user-images.githubusercontent.com/1284454/233892223-2e2ffb72-bf24-4792-bfdb-4c8263df94fb.png)
 
 Available features in beta-1.0.1 : 
 
@@ -35,7 +37,6 @@ Available features in beta-1.0.1 :
 * Border for ImageView
 * Use background as Column, Box etc.. 
 
-![bg](https://user-images.githubusercontent.com/1284454/233893369-2484e610-86e1-4f91-a3c4-035bffa573a9.jpg)
 
 ## Show an ImageView using a SVG shape clip
 ```kotlin
