@@ -1,8 +1,8 @@
 # Chimney
 [![](https://jitpack.io/v/januprasad/Chimney.svg)](https://jitpack.io/#januprasad/Chimney)
 
-# How we can convert svg to shape in compose
-Here im taking a custome shape in SVG which is flat (single level path)
+# How can we convert SVG to shape in compose
+Here I'm taking a custom shape in SVG, which is flat (single-level path)
 ```svg
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
@@ -70,4 +70,3 @@ So that i can
                 ),
             )
 ```
-
