@@ -25,8 +25,8 @@ Here I'm taking a custom shape in SVG, which is flat (single-level path)
   </path>
 </vector>
 ```
-![Screenshot 2023-04-24 at 8 44 36 AM](https://user-images.githubusercontent.com/1284454/233892223-2e2ffb72-bf24-4792-bfdb-4c8263df94fb.png)
 
+![screen](https://user-images.githubusercontent.com/1284454/233897178-3365773f-3d62-4656-953f-76f1654e26b3.png)
 
 Available features in beta-1.0.1 : 
 
