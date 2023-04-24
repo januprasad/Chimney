@@ -54,7 +54,7 @@ Available features in beta-1.0.1 :
                 VectorViewType.TextVector(
                     vectorResource =  R.drawable.svg_shape,
                     text = "Hello world!",
-                    aspectRatio = aspectRatio,
+                    aspectRatio = 1F,
                     isGradient = true,
                     fontSize = 22.sp,
                     fontFamily = RostiCreamy,
@@ -65,8 +65,8 @@ Available features in beta-1.0.1 :
 ```kotlin
  VectorComposeView(
                 VectorViewType.PlainVector(
-                    vectorResource = it,
-                    aspectRatio = aspectRatio,
+                    vectorResource =  R.drawable.svg_shape,
+                    aspectRatio = 1F,
                     isGradient = true,
                 ),
             )
