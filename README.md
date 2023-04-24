@@ -27,8 +27,9 @@ Here I'm taking a custom shape in SVG, which is flat (single-level path)
 ```
 ![Screenshot 2023-04-24 at 8 44 36 AM](https://user-images.githubusercontent.com/1284454/233892223-2e2ffb72-bf24-4792-bfdb-4c8263df94fb.png)
 
-So we should convert this SVG to a shape so that i would like clip
-So that i can
+
+Available features in beta-1.0.1 : 
+
 * TexView background
 * Clip for ImageView
 * Border for ImageView
