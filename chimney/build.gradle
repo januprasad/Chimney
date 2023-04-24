@@ -24,7 +24,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -58,7 +58,7 @@ afterEvaluate {
 
                 groupId = 'com.github.januprasad'
                 artifactId = 'chimney'
-                version = 'beta-1.0'
+                version = 'beta-1.0.1'
             }
         }
     }
