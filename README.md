@@ -1,4 +1,5 @@
-# Chimney
+# Chimney Provides Vector Compose
+
 [![](https://jitpack.io/v/januprasad/Chimney.svg)](https://jitpack.io/#januprasad/Chimney)
 
 # How can we convert SVG to shape in compose
