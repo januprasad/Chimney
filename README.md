@@ -83,6 +83,6 @@ repositories {
 ``` 
 dependencies { 
   ...
-  implementation 'com.github.januprasad:Chimney:beta-1.0.1'
+  implementation 'com.github.januprasad:Chimney:v1.0.0'
 }
 ```
