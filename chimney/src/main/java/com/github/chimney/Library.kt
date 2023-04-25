@@ -39,7 +39,12 @@ sealed class VectorViewType(
     ),
 ) {
     val gradientBrush: Brush by lazy {
-        Brush.sweepGradient(gradientColors)
+        if (gradientColors.size > 1) {
+            Brush.sweepGradient(gradientColors)
+        } else {
+            val colors = listOf(gradientColors.first(), Color.Black)
+            Brush.sweepGradient(colors)
+        }
     }
 
     data class PlainVector(
@@ -67,6 +72,8 @@ sealed class VectorViewType(
         val imageSrc: Int = 0,
         val padding: Int = 0,
         val borderEnabled: Boolean = false,
+        val borderColor: Color = Color.Unspecified,
+        val gradientEnabled: Boolean = false,
         val borderStroke: Int = 2,
     ) : VectorViewType(vectorResource)
 }
@@ -89,6 +96,22 @@ fun VectorComposeView(vectorViewType: VectorViewType) {
     when (vectorViewType) {
         is VectorViewType.ImageVector -> {
             with(vectorViewType) {
+                val borderType = when(gradientEnabled){
+                    true -> {
+                        BorderStroke(
+                            borderStroke.dp,
+                            gradientBrush,
+                        )
+                    }
+                    false -> {
+                        BorderStroke(
+                            borderStroke.dp,
+                            borderColor,
+                        )
+                    }
+                }
+
+
                 val modifier = when (borderEnabled) {
                     true ->
                         Modifier
@@ -97,10 +120,7 @@ fun VectorComposeView(vectorViewType: VectorViewType) {
                             .clip(
                                 vectorDrawableShape,
                             ).border(
-                                border = BorderStroke(
-                                    borderStroke.dp,
-                                    gradientBrush,
-                                ),
+                                border = borderType,
                                 shape = vectorDrawableShape,
                             )
 
