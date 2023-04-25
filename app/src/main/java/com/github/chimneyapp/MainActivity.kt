@@ -31,12 +31,10 @@ class MainActivity : ComponentActivity() {
                     val vectors = listOf(
                         R.drawable.arabic_banner_2,
                         R.drawable.arabic_banner_1,
-                        R.drawable.arabic_banner_3,
                         R.drawable.arabic_banner_3_1,
                     )
                     LazyColumn(
                         modifier = Modifier.fillMaxSize(),
-                        verticalArrangement = Arrangement.SpaceBetween,
                     ) {
                         itemsIndexed(
                             vectors,
@@ -46,7 +44,6 @@ class MainActivity : ComponentActivity() {
                                     VectorViewType.ImageVector(
                                         vectorResource = item,
                                         imageSrc = R.drawable.mosque,
-                                        aspectRatio = 1F,
                                         borderEnabled = true,
                                     ),
                                 )

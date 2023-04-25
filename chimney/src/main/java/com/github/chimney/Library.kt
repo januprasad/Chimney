@@ -49,14 +49,12 @@ sealed class VectorViewType(
 
     data class PlainVector(
         override val vectorResource: Int = 0,
-        val aspectRatio: Float = 1F,
         val backgroundColor: Color = Color.Black,
         val isGradient: Boolean = false,
     ) : VectorViewType(vectorResource)
 
     data class TextVector(
         override val vectorResource: Int = 0,
-        val aspectRatio: Float = 1F,
         val text: String = Empty,
         val isGradient: Boolean = false,
         val backgroundColor: Color = Color.Black,
@@ -68,7 +66,6 @@ sealed class VectorViewType(
 
     data class ImageVector(
         override val vectorResource: Int = 0,
-        val aspectRatio: Float = 1F,
         val imageSrc: Int = 0,
         val padding: Int = 0,
         val borderEnabled: Boolean = false,
@@ -96,7 +93,7 @@ fun VectorComposeView(vectorViewType: VectorViewType) {
     when (vectorViewType) {
         is VectorViewType.ImageVector -> {
             with(vectorViewType) {
-                val borderType = when(gradientEnabled){
+                val borderType = when (gradientEnabled) {
                     true -> {
                         BorderStroke(
                             borderStroke.dp,
@@ -111,11 +108,10 @@ fun VectorComposeView(vectorViewType: VectorViewType) {
                     }
                 }
 
-
                 val modifier = when (borderEnabled) {
                     true ->
                         Modifier
-                            .aspectRatio(aspectRatio)
+                            .aspectRatio(vectorDrawable.aspectRatio)
                             .padding(padding.dp)
                             .clip(
                                 vectorDrawableShape,
@@ -126,7 +122,7 @@ fun VectorComposeView(vectorViewType: VectorViewType) {
 
                     false ->
                         Modifier
-                            .aspectRatio(aspectRatio)
+                            .aspectRatio(vectorDrawable.aspectRatio)
                             .padding(padding.dp)
                             .clip(
                                 vectorDrawableShape,
@@ -149,7 +145,7 @@ fun VectorComposeView(vectorViewType: VectorViewType) {
                 }
                 Box(
                     modifier = Modifier
-                        .aspectRatio(aspectRatio)
+                        .aspectRatio(vectorDrawable.aspectRatio)
                         .clip(
                             vectorDrawableShape,
                         )
@@ -171,7 +167,7 @@ fun VectorComposeView(vectorViewType: VectorViewType) {
                     fontSize = fontSize,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
-                        .aspectRatio(aspectRatio)
+                        .aspectRatio(vectorDrawable.aspectRatio)
                         .padding(padding.dp)
                         .clip(
                             vectorDrawableShape,

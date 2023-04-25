@@ -16,6 +16,7 @@ import androidx.core.graphics.PathParser
 import org.xmlpull.v1.XmlPullParser
 
 const val ZERO = 0.0f
+const val ONE = 1f
 const val Empty = ""
 
 data class VectorDrawable(
@@ -24,7 +25,11 @@ data class VectorDrawable(
     val viewportWidth: Float = ZERO,
     val viewportHeight: Float = ZERO,
     val pathData: String = Empty,
-)
+) {
+    val aspectRatio: Float by lazy {
+        if (viewportHeight == ZERO || viewportWidth == ZERO) ONE else viewportWidth / viewportHeight
+    }
+}
 
 fun String?.toFloatOrZero(): Float {
     return if (this.isNullOrBlank()) {
@@ -101,21 +106,18 @@ class DrawShape(private val vectorDrawable: VectorDrawable) : Shape {
             path = drawShape(
                 vectorDrawable.pathData,
                 size,
-                vectorDrawable.viewportWidth,
-                vectorDrawable.viewportHeight,
             ),
         )
     }
 }
 
-fun drawShape(pathData: String, size: Size, w: Float, h: Float): Path {
+fun drawShape(pathData: String, size: Size): Path {
     return Path().apply {
         val path =
             PathParser.createPathFromPathData(pathData)
         val rectF = RectF()
         path.computeBounds(rectF, true)
         val matrix = Matrix()
-//        val scale = minOf(size.width / w, size.height / h)
         val scale = minOf(size.width / rectF.width(), size.height / rectF.height())
         matrix.setScale(scale, scale)
         path.transform(matrix)
