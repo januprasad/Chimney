@@ -45,7 +45,6 @@ Available features in beta-1.0.1 :
                 VectorViewType.ImageVector(
                     vectorResource =  R.drawable.svg_shape,
                     imageSrc = R.drawable.flowers,
-                    aspectRatio = aspectRatio,
                 ),
             )
 ```
@@ -56,8 +55,7 @@ Available features in beta-1.0.1 :
                 VectorViewType.TextVector(
                     vectorResource =  R.drawable.svg_shape,
                     text = "Hello world!",
-                    aspectRatio = 1F,
-                    isGradient = true,
+                    backgroundColor = Color.Magenta,
                     fontSize = 22.sp,
                     fontFamily = RostiCreamy,
                 ),
@@ -68,8 +66,7 @@ Available features in beta-1.0.1 :
  VectorComposeView(
                 VectorViewType.PlainVector(
                     vectorResource =  R.drawable.svg_shape,
-                    aspectRatio = 1F,
-                    isGradient = true,
+                    backgroundColor = Color.Magenta,
                 ),
             )
 ```
