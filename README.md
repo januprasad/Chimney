@@ -67,7 +67,7 @@ Available features in beta-1.0.1 :
                 VectorViewType.PlainVector(
                     vectorResource =  R.drawable.svg_shape,
                     backgroundColor = Color.Magenta,
-                ),
+                )
             )
 ```
 
